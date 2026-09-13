@@ -1,0 +1,3 @@
+package com.StudentManagementwithloginlogout.StudentManagementwithloginlogout.controlller;
+import org.springframework.stereotype.Controller; import org.springframework.ui.Model; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.web.bind.annotation.*; import com.StudentManagementwithloginlogout.StudentManagementwithloginlogout.audit.AuditService;
+@Controller public class PageAuditController { @Autowired AuditService audit; @GetMapping("/activity-logs") public String logs(@RequestParam(required=false) String q,Model m){m.addAttribute("logs",q==null?audit.all():audit.search(q));m.addAttribute("q",q==null?"":q);return "activity-logs";} }

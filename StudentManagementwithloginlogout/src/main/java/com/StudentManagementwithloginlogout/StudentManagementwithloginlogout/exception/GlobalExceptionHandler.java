@@ -1,0 +1,3 @@
+package com.StudentManagementwithloginlogout.StudentManagementwithloginlogout.exception;
+import java.util.Map; import org.springframework.http.*; import org.springframework.web.bind.annotation.*;
+@RestControllerAdvice public class GlobalExceptionHandler { @ExceptionHandler(IllegalArgumentException.class) ResponseEntity<Map<String,String>> bad(IllegalArgumentException e){return ResponseEntity.badRequest().body(Map.of("error",e.getMessage()));} @ExceptionHandler(RuntimeException.class) ResponseEntity<Map<String,String>> runtime(RuntimeException e){return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error",e.getMessage()));} }

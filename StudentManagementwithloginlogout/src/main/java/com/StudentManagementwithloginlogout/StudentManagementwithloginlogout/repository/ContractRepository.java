@@ -1,0 +1,3 @@
+package com.StudentManagementwithloginlogout.StudentManagementwithloginlogout.repository;
+import java.util.List; import org.springframework.data.domain.*; import org.springframework.data.jpa.repository.JpaRepository; import com.StudentManagementwithloginlogout.StudentManagementwithloginlogout.entity.*;
+public interface ContractRepository extends JpaRepository<Contract,Long>{Page<Contract> findByContractNameContainingIgnoreCase(String q,Pageable p); Page<Contract> findByStatus(ContractStatus status,Pageable p); Page<Contract> findByContractNameContainingIgnoreCaseAndStatus(String q,ContractStatus status,Pageable p);}

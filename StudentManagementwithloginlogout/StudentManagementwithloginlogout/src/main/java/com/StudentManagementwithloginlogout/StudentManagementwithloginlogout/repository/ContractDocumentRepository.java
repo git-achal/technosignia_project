@@ -1,0 +1,3 @@
+package com.StudentManagementwithloginlogout.StudentManagementwithloginlogout.repository;
+import java.util.List; import org.springframework.data.jpa.repository.JpaRepository; import com.StudentManagementwithloginlogout.StudentManagementwithloginlogout.entity.ContractDocument;
+public interface ContractDocumentRepository extends JpaRepository<ContractDocument,Long>{List<ContractDocument> findByContractIdOrderByUploadedAtDesc(Long id);}

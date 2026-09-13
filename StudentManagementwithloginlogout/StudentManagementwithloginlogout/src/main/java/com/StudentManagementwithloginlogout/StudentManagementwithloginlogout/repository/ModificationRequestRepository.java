@@ -1,0 +1,3 @@
+package com.StudentManagementwithloginlogout.StudentManagementwithloginlogout.repository;
+import java.util.List; import org.springframework.data.jpa.repository.JpaRepository; import com.StudentManagementwithloginlogout.StudentManagementwithloginlogout.entity.ModificationRequest;
+public interface ModificationRequestRepository extends JpaRepository<ModificationRequest,Long>{List<ModificationRequest> findByStatusOrderByRequestedAtDesc(String status);}
